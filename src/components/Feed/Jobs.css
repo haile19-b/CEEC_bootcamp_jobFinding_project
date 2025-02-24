@@ -1,0 +1,9 @@
+.jops{
+    margin: auto;
+    margin-top: 30px;
+}
+#jop_1{
+    margin: 10px 20px;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 5px 0px #A6ABBD;
+}

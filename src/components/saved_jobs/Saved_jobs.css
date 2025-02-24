@@ -1,0 +1,21 @@
+.inbox{
+    padding: 16px 8px ;
+    background-color: white;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 8px;
+    box-shadow: 2px 2px 5px 0px #A6ABBD;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+
+}
+
+.container{
+    position: fixed;
+    right: 0;
+    top: 120px;
+    overflow: auto;
+}

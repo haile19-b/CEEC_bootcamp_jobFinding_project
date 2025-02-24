@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2px 10px;
+    height: 100px;
+    box-shadow: 3px 2px 0px #00000040;
+    background-color: white;
+}
+nav ul{
+    display: flex;
+    gap: 60px;
+    list-style: none;
+}
+nav #inter_method{
+    display: flex;
+    gap: 25px;
+}
+#login{
+    background-color: #0034D1;
+    color: white;
+}
+#sign{
+    background-color: white;
+}
+#inter_method .btns{
+    border: 0;
+    outline: 0;
+    padding: 16px 57px;
+    border-radius: 8px;
+    border: 1px solid #0034D1;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 16px;
+}
+nav ul li a{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24.2px;
+}
+#logo img{
+    background-color: #0034D1;
+    width: 158px;
+    padding: 4.79px;
+    border-radius: 9.58px;
+}
+nav ul li:hover{
+    transition: 0.2s;
+    color: #0034D1;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+#comp_1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    background-color: white;
+}
+
+#search{
+    border: 2px solid gray;
+    margin-top: 20px;
+    width: 627px;
+    height: 58px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 12px 9px;
+    background-color: white;
+}
+.texts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+.texts input{
+    width: 290px;
+    height: 24px;
+    border: 0;
+    outline: 0;
+    margin-left: 5px;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19.36px;
+    color: black;
+}
+#location{
+    border: 0;
+    outline: 0;
+    width: 80px;
+}
+#search button{
+    padding: 12px 24px;
+    width: 114px;
+    border-radius: 8px;
+    background-color: #0034D1;
+    color: white;
+    
+}
