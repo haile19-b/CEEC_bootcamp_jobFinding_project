@@ -1,7 +1,7 @@
 import React from 'react'
 import './jobPost.css'
 import { useFormik } from 'formik'
-import { SchemaOne } from '../assets/Schema/yup'
+import { SchemaOne } from '../Schema/yup'
 import { useNavigate } from 'react-router-dom'
 import { useDataForPost } from '../constants/Store'
 
