@@ -1,7 +1,7 @@
 import React from 'react'
 import './jobPost.css'
 import { useFormik } from 'formik'
-import { SchemaThree } from '../assets/Schema/yup'
+import { SchemaThree } from '../Schema/yup'
 
 function JobPost3() {
 
