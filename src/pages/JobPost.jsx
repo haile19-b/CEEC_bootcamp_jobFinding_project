@@ -3,19 +3,18 @@ import './jobPost.css'
 import { useFormik } from 'formik'
 import { SchemaOne } from '../Schema/yup'
 import { useNavigate } from 'react-router-dom'
-import { useDataForPost } from '../constants/Store'
+import { ManageData, useDataForPost } from '../constants/Store'
 
 function JobPost() {
 
 const onSubmit = (value)=>{
-    setTempInfo(value)
+  setItemInfo(value)
     next('/job-post')
-    console.log(tempInfo)
 }
 
  const next = useNavigate();
 
- const {setTempInfo,tempInfo} = useDataForPost();
+ const {setItemInfo,tempInfo,itemInfo,setTempInfo} = useDataForPost();
 
   const {touched,errors,values,handleBlur,handleChange,handleSubmit} = useFormik({
     initialValues:{

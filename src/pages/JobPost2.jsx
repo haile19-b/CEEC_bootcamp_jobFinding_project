@@ -3,25 +3,23 @@ import './jobPost.css'
 import { useFormik } from 'formik'
 import { SchemaTwo } from '../Schema/yup'
 import { useNavigate } from 'react-router-dom'
-import { useDataForPost } from '../constants/Store'
+import { ManageData, useDataForPost } from '../constants/Store'
 
 function JobPost2() {
 
     const next = useNavigate();
 const onSubmit = (value)=>{
-    setTempInfo(value)
-  console.log(tempInfo)
+  setItemInfo(value)
   next('/job post')
 }
-
- const {setTempInfo,tempInfo} = useDataForPost();
+ const {setItemInfo,itemInfo,tempInfo,setTempInfo} = useDataForPost();
 
   const {touched,errors,values,handleBlur,handleChange,handleSubmit} = useFormik({
     initialValues:{
-        logo:"",
-        isBookMarked:"",
-        location: "",
-        experienceLevel: "",
+      logo:"",
+      isBookMarked:true,
+      location: "",
+      experienceLevel: "",
     },
     validationSchema: SchemaTwo,
     onSubmit,
@@ -45,10 +43,11 @@ const onSubmit = (value)=>{
             <input
             value={values.isBookMarked} 
             onChange={handleChange}
-            onBlur={handleBlur} 
+            onBlur={handleBlur}
             placeholder='your text' 
             name='isBookMarked'
-            className='inp-tex border-1 w-[80%]' type="text" />
+            className='inp-tex border-1 w-[80%]'
+            type="text" />
             <p className='text-red-500 absolute right-0'>{touched.isBookMarked && errors.isBookMarked?errors.isBookMarked:""}</p>
           </label>
           <label className='block relative'>Location: <br />
@@ -73,7 +72,8 @@ const onSubmit = (value)=>{
             <p className='text-red-500 absolute right-0'>{touched.experienceLevel && errors.experienceLevel?errors.experienceLevel:""}</p>
           </label>
         </div>
-        <div className='text-end relative top-[100px]'>
+        <div className='relative top-[100px] flex justify-between'>
+          <button type='' className='border-1'>Back</button>
           <button type='submit' className='border-1'>Next</button>
         </div>
       </form>

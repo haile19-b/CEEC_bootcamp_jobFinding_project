@@ -53,7 +53,7 @@ function App() {
   }
   // api/jobs/fdsvczx
   useEffect(()=>{
-    fetch(`https://joblisting-rd8f.onrender.com/api/jobs?page=${page}&limit=5`)
+    fetch(`https://joblisting-3hjv.onrender.com/api/jobs?page=${page}&limit=500`)
     .then((res)=>res.json())
     .then((data)=>{
       setJo([...data.jobs])
@@ -69,7 +69,6 @@ function App() {
   }
   
   const [savedjo, setSavedjo] = useState([]);
-console.log(jo)
   useEffect(() => {
     setSavedjo(jo.filter(obj => obj.isBookMarked == true));
   }, [jo]);
