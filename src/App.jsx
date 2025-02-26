@@ -13,6 +13,7 @@ import Layout from './layout'
 import JobPost from './pages/JobPost'
 import JobPost2 from './pages/JobPost2'
 import JobPost3 from './pages/JobsPost3'
+import DescriptionPage from './pages/DescriptionPage'
 
 function App() {
   const [jo,setJo] = useState([])
@@ -20,6 +21,11 @@ function App() {
   const [search,setSearch] = useState("")
   const [manualInput, setManualInput] = useState({ from: 0, to: Infinity });
   const [location,setLocation] = useState("")
+  const [description,setDescription] = useState(false)
+
+  const handleDes_page = ()=>{
+    setDescription(des => !des)
+  }
 
   const handle_search = (event)=>{
     setSearch((event.target.value).toLowerCase())
@@ -63,9 +69,11 @@ function App() {
   if(!jo){
     return <p>Loading...</p>
   }
-  const handle_clicked = (id)=>{
+  const handle_clicked = (id,e)=>{
+    e.stopPropagation()
     const updated_jo = jo.map(obj=> obj.id === id ? {...obj, isBookMarked: !obj.isBookMarked}:obj )
     setJo(updated_jo)
+  
   }
   
   const [savedjo, setSavedjo] = useState([]);
@@ -75,12 +83,12 @@ function App() {
 
   return (
     <div>
-    
-  
+  <DescriptionPage handleDes_page = {handleDes_page} description = {description} />
+    <div>
     <Routes>
       <Route path='/' element={<Layout handle_search = {handle_search} hndl_location_change = {hndl_location_change} />}>
-        <Route path='/' element = {<Home handle_page = {handle_page} location = {location} handle_clicked = {handle_clicked} savedjo = {savedjo} setSavedjo = {setSavedjo} search = {search} jo = {jo} setJo = {setJo} setManualInput = {setManualInput} manualInput = {manualInput} />} />
 
+        <Route path='/' element = {<Home handleDes_page = {handleDes_page} handle_page = {handle_page} location = {location} handle_clicked = {handle_clicked} savedjo = {savedjo} setSavedjo = {setSavedjo} search = {search} jo = {jo} setJo = {setJo} setManualInput = {setManualInput} manualInput = {manualInput} />} />
         <Route path='/application' element = {<Application/>} />
         <Route path='/company' element = {<Company/>} />
         <Route path='/contact' element = {<Contact/>} />
@@ -89,6 +97,7 @@ function App() {
         <Route path='/job post' element = {<JobPost3/>} />
       </Route>
       </Routes>
+    </div>
     </div>
   )
 }

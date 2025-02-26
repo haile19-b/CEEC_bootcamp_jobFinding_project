@@ -3,14 +3,14 @@ import Jops from '../components/Feed/Feed'
 import Feed from '../components/Feed/Feed'
 import Saved_jobs from '../components/saved_jobs/Saved_jobs'
 import Filter from '../components/filter/Filter'
-function Home({handle_page,manualInput,setManualInput,search,jo,setJo,savedjo,location,setSavedjo,handle_clicked}) {
+function Home({handleDes_page,handle_page,manualInput,setManualInput,search,jo,setJo,savedjo,location,setSavedjo,handle_clicked}) {
   return (
     <div>
       <div className='content flex'>
        <div className='sticky top-[150px] h-fit'>
        <Filter manualInput = {manualInput} setManualInput = {setManualInput} />
        </div>
-      <Feed search = {search} location = {location} manualInput = {manualInput} jo = {jo} setJo={setJo} savedjo = {savedjo} setSavedjo = {setSavedjo} handle_clicked = {handle_clicked}/>
+      <Feed handleDes_page = {handleDes_page} search = {search} location = {location} manualInput = {manualInput} jo = {jo} setJo={setJo} savedjo = {savedjo} setSavedjo = {setSavedjo} handle_clicked = {handle_clicked}/>
 
     <div>
     <Saved_jobs jo = {jo} setJo={setJo} savedjo = {savedjo} setSavedjo = {setSavedjo} handle_clicked = {handle_clicked}/>

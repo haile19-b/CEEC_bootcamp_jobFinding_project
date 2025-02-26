@@ -2,7 +2,7 @@ import './Feed.css'
  import React, { useState } from 'react'
 import Jobs from './Jobs'
  
- const Feed = ({location,manualInput,search,jo,setJo,savedjo,setSavedjo,handle_clicked}) => {
+ const Feed = ({handleDes_page,location,manualInput,search,jo,setJo,savedjo,setSavedjo,handle_clicked}) => {
 
 
    return (
@@ -19,7 +19,7 @@ import Jobs from './Jobs'
           return Number(item.salary.replace(/[$,]/g, "")) >= manualInput.from && Number(item.salary.replace(/[$,]/g, "")) <= manualInput.to;
         }
         }).map((obj,index)=>
-          <Jobs key = {index} type = {obj.type} salary = {obj.salary} location = {obj.location} description = {obj.description} logo = {obj.logo} id = {obj.id} title = {obj.title} company = {obj.company} isBookMarked = {obj.isBookMarked} handle_clicked = {handle_clicked} />
+          <Jobs handleDes_page = {handleDes_page} key = {index} type = {obj.type} salary = {obj.salary} location = {obj.location} description = {obj.description} logo = {obj.logo} id = {obj.id} title = {obj.title} company = {obj.company} isBookMarked = {obj.isBookMarked} handle_clicked = {handle_clicked} />
         )
        }
      </div>
